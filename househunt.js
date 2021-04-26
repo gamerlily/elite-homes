@@ -105,8 +105,12 @@ const factionsWithinLimits = function( factions, maxFactions) {
     return validFactions.length <= maxFactions
 }
 
-const calculateSystemValue = function(allegiance, population, stations, surfaceStations) {
-	return 0;
+const calculateSystemValue = function(population, largeStations, surfaceStations) {
+	var systemValue = 0;
+	systemValue += 3*stations;
+	systemValue += 2*surfaceStations;
+	
+	return systemValue;
 }
 
 async function getEDSMPopulatedSystems() {
