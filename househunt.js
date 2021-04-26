@@ -36,6 +36,7 @@ const csvWriter = createCsvWriter({
         {id: 'factions', title: 'Faction Count'},
         {id: 'stations', title: 'Orbital Stations'},
         {id: 'surfaceStations', title: 'Surface Stations'}
+        {id: 'value', title: 'Expected value'}
     ]
 });
 
@@ -102,6 +103,10 @@ const factionsWithinLimits = function( factions, maxFactions) {
     const validFactions = factions
         .filter(faction => faction.influence > 0.001)
     return validFactions.length <= maxFactions
+}
+
+const calculateSystemValue = function(allegiance, population, stations, surfaceStations) {
+	return 0;
 }
 
 async function getEDSMPopulatedSystems() {
